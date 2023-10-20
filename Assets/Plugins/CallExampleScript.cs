@@ -13,6 +13,12 @@ public class CallExampleScript : MonoBehaviour
         Debug.Log("CallingExample - started");
         //TODO: replace with your own apiKey and publisherId
         Farly.Configure("apiKey", "publisherId");
+
+        Farly.getHostedOfferwallUrl(new OfferWallRequest { userId = "your_userId" }, (url) =>
+        {
+            // inject this into a webview ? Or open it in the browser ?
+            Debug.Log($"If you want to display the wall in your own webview, use this url: {url}");
+        });
     }
 
     // Update is called once per frame
